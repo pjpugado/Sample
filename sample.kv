@@ -1,0 +1,98 @@
+WindowManager:
+    HomePage:
+    SecondPage:
+
+<HomePage>:
+    name: "home"
+
+    FloatLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+
+        pos_hint : {"center_x":.5,"center_y":.5}
+        canvas.before:
+            Color:
+                rgba: 0,0.4,1,1
+            Rectangle:
+                pos: self.pos
+                size: 320, 680
+        padding : 30
+        spacing : 30
+        orientation : "vertical"
+
+        Image:
+            source: 'newlogo.png'
+            size: 180,180
+            pos: 70, 350
+            texture: self.texture
+            size_hint: (None, None)
+
+        Label:
+            markup: True
+            text : "[b][u]BALAYANIHAN[/u][/b]"
+            color: (1,0,0,1)
+            font_style : 'Button'
+            font_size : 35
+            size_hint_y : None
+            pos: 3, 498
+
+        Label:
+            markup: True
+            text : "[b][u]BALAYANIHAN[/u][/b]"
+            color: (0,0,0,1)
+            font_style : 'Button'
+            font_size : 35
+            size_hint_y : None
+            pos: 0, 500
+
+        Button:
+            text: "Next"
+            font_size: 12
+            pos: 130, 150
+            size_hint: (.2, .05)
+            on_release:
+                app.root.current = "page2"
+                root.manager.transition.direction = "left"
+
+<SecondPage>:
+    name: "page2"
+
+    FloatLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+
+        pos_hint : {"center_x":.5,"center_y":.5}
+        canvas.before:
+            Color:
+                rgba: 0,0.4,1,1
+            Rectangle:
+                pos: self.pos
+                size: 320, 680
+        padding : 30
+        spacing : 30
+        orientation : "vertical"
+
+        Image:
+            source: 'newlogo.png'
+            size: 180,180
+            pos: 70, 350
+            texture: self.texture
+            size_hint: (None, None)
+
+        Label:
+            markup: True
+            text : "[b]BALAYANIHAN[/b]"
+            color: (1,1,1,1)
+            font_name : 'Comic'
+            font_size : 35
+            size_hint_y : None
+            pos: 0, 500
+
+        Button:
+            text: "Back"
+            font_size: 12
+            pos: 130, 150
+            size_hint: (.2, .05)
+            on_release:
+                app.root.current = "home"
+                root.manager.transition.direction = "right"
