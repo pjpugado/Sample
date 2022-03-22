@@ -30,6 +30,11 @@ class HomePage(Screen):
     Config.set("graphics", "borderless", "0")
     Config.set("graphics", "resizable", "0")
 
+    def access_page2(self):
+        if myDb.is_connected():
+            self.manager.current = "page2"
+
+
 # Designate Our .kv file
 kv = Builder.load_file('sample.kv')
 

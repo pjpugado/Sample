@@ -51,7 +51,7 @@ WindowManager:
             pos: 130, 150
             size_hint: (.2, .05)
             on_release:
-                app.root.current = "page2"
+                root.access_page2()
                 root.manager.transition.direction = "left"
 
 <SecondPage>:
