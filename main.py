@@ -9,7 +9,7 @@ from kivy.core.window import Window
 
 Window.size = (320, 680)
 myDb = mysql.connector.connect(
-    host='localhost',
+    host='10.10.252.49',
     user='root',
     password='',
     database='balayan_taxpayer'
