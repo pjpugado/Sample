@@ -1,11 +1,11 @@
-import mysql.connector
+# import mysql.connector
 from kivymd.app import MDApp
 from kivy.lang import Builder
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.config import Config
 from kivy.core.window import Window
-#
-# Window.size = (320, 680)
+
+Window.size = (320, 680)
 # myDb = mysql.connector.connect(
 #     host='10.10.252.49',
 #     user='root',
@@ -30,9 +30,8 @@ class HomePage(Screen):
     Config.set("graphics", "borderless", "0")
     Config.set("graphics", "resizable", "0")
 
-    # def access_page2(self):
-    #     if myDb.is_connected():
-    #         self.manager.current = "page2"
+    def access_page2(self):
+        self.manager.current = "page2"
 
 
 # Designate Our .kv file
